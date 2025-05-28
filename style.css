@@ -17,7 +17,13 @@
 /* Navbar */
 .navbar {
   display: flex;
+  width: 100%;
   justify-content: space-between;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
   align-items: center;
   background-color: #e9ebee;
   padding: 20px 50px;
@@ -26,6 +32,10 @@
 .logo img {
   height: 42px;
 }
+
+ .nav-button img{
+  display: none;
+ }
 
 .nav-links {
   list-style: none;
@@ -61,6 +71,8 @@
   justify-content: space-between;
   padding: 60px 50px;
   gap: 50px;
+  padding-top: 180px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .hero-left {
@@ -837,12 +849,27 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .navbar {
-    flex-direction: column;
+    flex-direction: row-reverse;
     align-items: flex-start;
     padding: 20px;
   }
+  .nav-button img{
+    display: block;
+    width: 8vw;
+    cursor: pointer;
+  }
+    .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 0;
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  
 
   #demoForm .form-row,
   .form-row {
@@ -858,11 +885,7 @@ body {
     display: block;
     flex-direction: column;
   }
-  .nav-links {
-    flex-direction: column;
-    gap: 15px;
-    margin-left: 0;
-  }
+
   .sections {
     margin: 0;
     padding: 0;
