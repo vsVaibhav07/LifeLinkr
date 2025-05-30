@@ -13,3 +13,16 @@ function scrollToDemo() {
     alert("Demo section not found!");
   }
 }
+
+function toggleNav() {
+  const navLinks = document.querySelector('.nav-links');
+  const navOverlay = document.querySelector('.nav-overlay');
+  navLinks.classList.toggle('show');
+  navOverlay.classList.toggle('show');
+  
+  // Close menu when clicking overlay
+  navOverlay.addEventListener('click', () => {
+    navLinks.classList.remove('show');
+    navOverlay.classList.remove('show');
+  });
+}
